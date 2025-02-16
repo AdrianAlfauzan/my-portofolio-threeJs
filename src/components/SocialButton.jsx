@@ -26,12 +26,23 @@ export default function SocialButton() {
     },
   };
 
+  const blueShades = ["#1E90FF", "#007BFF", "#0D6EFD", "#6495ED"];
+
   return (
-    <div className="md:flex flex-col items-center justify-center border border-white bg-[#ffffff29] rounded-3xl space-y-11 p-3 max-h-[506px] md:max-h-[386px] hidden">
-      {socialIcons.map((icon) => (
+    <div className="md:flex flex-col items-center justify-center border border-white bg-[#ffffff29] rounded-3xl space-y-11 p-3 max-h-[600px] md:max-h-[500px] hidden">
+      {socialIcons.map((icon, index) => (
         <button key={icon.id}>
           <svg viewBox={icon.viewBox} width={40} height={40}>
-            <motion.path d={icon.path} fill="#FFC107" stroke="#FFC107" strokeWidth={1} variants={variants} initial="initial" animate="animate" whileHover="hover" />
+            <motion.path
+              d={icon.path}
+              fill={blueShades[index % blueShades.length]} //
+              stroke={blueShades[index % blueShades.length]}
+              strokeWidth={1}
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+            />
           </svg>
         </button>
       ))}

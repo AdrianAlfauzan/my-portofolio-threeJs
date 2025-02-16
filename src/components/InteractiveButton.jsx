@@ -50,7 +50,7 @@ const CustomButton = ({ text }) => {
       whileTap={{ scale: 0.95 }} //strighten
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      className="w-full px-8 py-4 text-lg font-bold text-white rounded-lg overflow-hidden relative group bg-yellow-400"
+      className="w-full px-8 py-4 text-lg font-bold text-white rounded-lg overflow-hidden relative group bg-[#00d2ff] hover:cursor-pointer"
     >
       <span className="absolute inset-0 w-full h-full bg-[#ff5c72] rounded-lg transform scale-0 transition-transform duration-300 ease-out group-hover:scale-100"></span>
       <span className="relative z-10">{displayText}</span>

@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div style={{ height: "100vh" }}>
       {loading ? (
         <LoadingSpinner onComplete={() => setLoading(false)} />
       ) : (

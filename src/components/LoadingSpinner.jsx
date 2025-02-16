@@ -58,7 +58,7 @@ export default function LoadingSpinner({ onComplete }) {
   }, []);
 
   useEffect(() => {
-    const duration = 5000;
+    const duration = 0;
     const intervalTime = 50;
     const step = intervalTime / duration;
 

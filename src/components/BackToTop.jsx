@@ -24,14 +24,14 @@ export default function BackToTop() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-transparent text-yellow-400 p-3 rounded-full shadow-lg transition-colors z-[150] 
+          className="hover:cursor-pointer  fixed bottom-8 right-8 bg-transparent text-yellow-400 p-3 rounded-full shadow-lg transition-colors z-[150] 
           flex items-center justify-center"
           aria-label="Scroll to top"
           style={{ width: "50px", height: "50px" }}
         >
           <motion.div className="absolute inset-0" style={{ transform: "rotate(-90deg)" }}>
             <svg width={50} height={50} viewBox="0 0 36 36">
-              <path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#ffc107" strokeWidth={2} />
+              <path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#00d2ff" strokeWidth={2} />
               <motion.path
                 d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"
                 fill="none"
