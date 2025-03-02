@@ -48,8 +48,8 @@ const NamaGradient = () => {
 
   return (
     <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">
-      {/* {displayedText} */}
-      Adrian Musa Alfauzan
+      {displayedText}
+      {/* Adrian Musa Alfauzan */}
     </span>
   );
 };
