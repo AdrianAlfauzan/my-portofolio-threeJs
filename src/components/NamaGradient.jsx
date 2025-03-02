@@ -1,7 +1,15 @@
 import { useState, useEffect, useMemo } from "react";
 
 const NamaGradient = () => {
-  const texts = useMemo(() => ["Adrian Musa Alfauzan", "Fullstack Developer", "Problem Solver", "Programmer Life"], []);
+  const texts = useMemo(
+    () => [
+      "Adrian Musa Alfauzan",
+      "Fullstack Developer",
+      "Problem Solver",
+      "Programmer Life", //
+    ],
+    []
+  );
   const [textIndex, setTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
@@ -38,7 +46,12 @@ const NamaGradient = () => {
     }
   }, [index, removing, textIndex, texts]);
 
-  return <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">{displayedText}</span>;
+  return (
+    <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">
+      {/* {displayedText} */}
+      Adrian Musa Alfauzan
+    </span>
+  );
 };
 
 export default NamaGradient;

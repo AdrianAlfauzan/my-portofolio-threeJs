@@ -63,7 +63,7 @@ export default function ProjectsSection() {
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: -100 }}
                   transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                  className="absolute w-[90%] h-auto md:w-[80%] md:h-full p-4 md:p-6 border border-yellow-400 bg-[#ffffff29] rounded-3xl text-white"
+                  className="absolute w-[90%] h-auto md:w-[80%] md:h-full p-4 md:p-6 border border-[#00bfff] bg-[#ffffff29] rounded-3xl text-white"
                 >
                   <img src={project.imageUrl} alt={project.title} className="w-full aspect-[16/9] md:h-[700px] object-cover rounded-t-lg mb-4" />
 

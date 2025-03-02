@@ -35,9 +35,10 @@ export default function NumbersSection() {
         ref={sectionRef} // streamline the animation
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
-        className="relative z-1 mx-auto w-full lg:w-10/12 p-6 sm:p-8 rounded-3xl border border-yellow-400 bg-white/20 shadow-lg md:divide-x divide-primary grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 lg:gap-12"
+        className="relative z-1 mx-auto w-full lg:w-10/12 p-6 sm:p-8 rounded-3xl border border-[#00bfff] bg-white/20 shadow-lg md:divide-x divide-primary grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 lg:gap-12"
       >
         {Numbers.map((item) => (
           <article key={item.id} className="text-center">

@@ -7,9 +7,11 @@ export default function BackToTop() {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
       setShowButton(latest > 0.05);
     });
+
+    return () => unsubscribe(); // Pastikan untuk membersihkan listener saat komponen unmount
   }, [scrollYProgress]);
 
   const scrollToTop = () => {

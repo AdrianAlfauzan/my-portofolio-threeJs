@@ -47,20 +47,23 @@ export default function SkillsSection() {
       <header className="absolute w-1/2 aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-r from-[#007cda] via-[#785ae4] to-primary opacity-20 blur-[100px] left-10 top-0 hidden md:block"></header>
       <header className="absolute w-1/2 aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-r from-[#007cda] via-[#785ae4] to-primary opacity-20 blur-[100px] right-10 bottom-0 hidden md:block"></header>
       <CustomTitle title="My Skills" />
-      <section className="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-8 p-16 text-white mt-32">
+      <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8 p-16 text-white mt-32">
         {skills.map((item, index) => (
           <motion.article
-            key={index} //
+            key={index}
             initial={{ opacity: 1, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.5 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              delay: index * 0.5,
+              repeat: Infinity, // Infinite repeat
+              repeatType: "reverse", // Reverse the animation (up and down)
+            }}
             viewport={{ once: true, amount: 0.5 }}
+            className="animate-upDown" // Add animation class here
           >
-            <SkillCircle
-              skill={item.skill} //
-              percentage={item.percentage}
-              icon={item.icon}
-            />
+            <SkillCircle skill={item.skill} percentage={item.percentage} icon={item.icon} />
           </motion.article>
         ))}
       </section>

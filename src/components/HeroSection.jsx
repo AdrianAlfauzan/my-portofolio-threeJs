@@ -16,10 +16,10 @@ function HeroSection() {
             <SocialButton />
             <section className="ml-0 md:ml-12">
               <header className="text-center lg:text-left">
-                <h1 className="pt-4 text-white font-bold text-4xl md:text-5xl lg:text-6xl flex flex-col">
+                <h1 className="pt-4 text-white font-bold text-4xl md:text-5xl lg:text-6xl ">
                   Hi I'm
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">
-                    <NamaGradient />
+                    {""} <NamaGradient />
                   </span>
                 </h1>
               </header>
@@ -42,7 +42,7 @@ function HeroSection() {
           </section>
           <figure className="lg:h-full md:flex md:justify-end mt-20 md:mt-0">
             <motion.div
-              className="w-[350px] h-[350px] md:w-[400px] md:h-[400px] flex justify-center items-center p-3 rounded-full overflow-hidden relative"
+              className="w-[350px] h-[350px] md:w-[400px] md:h-[400px] flex justify-center items-center p-3 rounded-full overflow-hidden relative aspect-square"
               animate={{
                 backgroundColor: ["#FFC107", "#FF7556", "#FF6667"],
                 scale: [1, 1.1, 1],
@@ -51,7 +51,7 @@ function HeroSection() {
               transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ffc107] to-[#ff6667] blur-3xl opacity-60 h-full w-full" />
-              <img src="/CodingNGamer.webp" alt="Hero Pic" className="relative z-10 rounded-full max-h-full shadow-2xl transform transition-transform duration-500 ease-in-out hover:scale-110" />
+              <img src="/iyan.png" alt="Hero Pic" className="relative z-10 rounded-full max-h-full max-w-full shadow-2xl transform transition-transform duration-500 ease-in-out hover:scale-110 object-cover aspect-square" />
             </motion.div>
           </figure>
         </article>

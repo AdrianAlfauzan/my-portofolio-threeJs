@@ -1,29 +1,43 @@
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CustomTitle from "./CustomTitle";
+import { useRef } from "react";
 import { experience, education } from "./data/config";
 
-const SectionItem = ({ title, subtitle, year, details, icon }) => (
-  <motion.div
-    className="relative flex flex-col justify-end px-2 gap-3 rounded-lg cursor-pointer before:absolute before:inset-[10px] before:rounded-[10px] before:bg-gradient-to-br before:from-yellow-400 before:to-red-400 before:z-[-10] after:absolute after:indent-0 after:bg-gradient-to-br after:from-red-400 after:to-yellow-400 after:scale-[0.95] after:blur-[20px] hover:after:blur-[30px] mt-10"
-    initial={{ opacity: 0, y: 50 }} //
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: false }}
-  >
-    <section className="bg-black z-20 text-white rounded-xl">
-      <section className="border border-yellow-400 bg-[#ffffff29] rounded-xl p-3 flex items-center">
-        <img src={icon} alt="icon" width={64} height={64} />
-        <div className="ml-10">
-          <h3 className="text-xl font-semibold">{title}</h3>
-          <p className="text-sm">{subtitle}</p>
-          <p className="text-sm italic">{year} </p>
-          {details && <p className="mt-2"> {details}</p>}
-        </div>
+const SectionItem = ({ title, subtitle, year, details, icon }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Aktif saat masuk dan hilang saat keluar
+  });
+
+  // Ubah opacity berdasarkan posisi scroll
+  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="relative flex flex-col justify-end px-2 gap-3 rounded-lg cursor-pointer before:absolute before:inset-[10px] before:rounded-[10px] before:bg-gradient-to-br before:from-yellow-400 before:to-red-400 before:z-[-10] after:absolute after:indent-0 after:bg-gradient-to-br after:from-red-400 after:to-yellow-400 after:scale-[0.95] after:blur-[20px] hover:after:blur-[30px] mt-10"
+      initial={{ opacity: 0, y: 400 }}
+      whileInView={{ opacity: 1, y: 10 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+      style={{ opacity }} // Atur opacity berdasarkan scroll
+    >
+      <section className="bg-black z-20 text-white rounded-xl">
+        <section className="border border-[#00bfff] bg-[#ffffff29] rounded-xl p-3 flex items-center">
+          <img src={icon} alt="icon" width={64} height={64} />
+          <div className="ml-10">
+            <h3 className="text-xl font-semibold">{title}</h3>
+            <p className="text-sm">{subtitle}</p>
+            <p className="text-sm italic">{year}</p>
+            {details && <p className="mt-2">{details}</p>}
+          </div>
+        </section>
       </section>
-    </section>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default function EducationAndExpression() {
   return (

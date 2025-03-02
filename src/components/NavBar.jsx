@@ -48,8 +48,8 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="relative flex justify-between px-12 py-2">
-      <div ref={scope} className="relative">
+    <div className="relative flex justify-between px-12 py-2 ">
+      <div ref={scope} className="relative bg-green-500">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="absolute top-4 left-4 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center"
@@ -73,7 +73,9 @@ export default function NavBar() {
           </ul>
         </nav>
       </div>
-      <h1 className="font-bold text-2xl text-white top-8 right-8 p-8 lg:top-12 lg:pr-16">LOGO</h1>
+      <h1 className="font-bold text-2xl text-white top-8 right-8 p-5 lg:top-12 lg:pr-16 ">
+        <img src="/CodingNGamer.webp" alt="" className="w-12 h-12 rounded-full" />
+      </h1>
     </div>
   );
 }

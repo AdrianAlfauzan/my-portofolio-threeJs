@@ -30,4 +30,6 @@ body::-webkit-scrollbar-thumb {
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  position: relative;
 }

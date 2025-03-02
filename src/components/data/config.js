@@ -118,43 +118,81 @@ export const skills = [
     percentage: 85,
     icon: "https://img.icons8.com/color/40/firebase.png",
   },
+  {
+    skill: "Python",
+    percentage: 80,
+    icon: "https://img.icons8.com/color/40/python.png",
+  },
 ];
 
 // Experience and Education Section
 export const experience = [
   {
     id: 1,
-    title: "Frontend Developer",
-    company: " Tech Solution Inc.",
-    year: "2022 - Present",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/briefcase-settings.png",
+    title: "Fullstack Developer",
+    company: "PTSP - BMKG",
+    year: "2023 - Present",
+    description: "Mengembangkan aplikasi PTSP dengan antarmuka responsif dan backend yang efisien. Berkolaborasi dengan tim untuk memastikan kinerja dan stabilitas aplikasi, serta melakukan peralihan dari PHP ke Next.js.",
+    icon: "https://img.icons8.com/ios-filled/64/ffffff/full-stack-developer.png", // Updated icon for Fullstack Developer
   },
   {
     id: 2,
-    title: "Frontend Developer",
-    company: " Startup",
-    year: "2022 - Present",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/briefcase-settings.png",
+    title: "Backend Developer",
+    company: "PTSP - BMKG",
+    year: "Juni 2024 - Juli 2024",
+    description: "Bertanggung jawab atas pengembangan aplikasi Simore (Sistem Monitoring Rescue), serta membuat backend yang efisien untuk mendukung operasi pencarian dan penyelamatan.",
+    icon: "https://img.icons8.com/ios-filled/64/ffffff/server.png", // Updated icon for Backend Developer
+  },
+  {
+    id: 3,
+    title: "QA & Pentester",
+    company: "PTSP - BMKG",
+    year: "2023 - Present",
+    description: "Melakukan pengujian keamanan pada aplikasi menggunakan tools seperti XSS Injection, Cross-Site Tracing (XST), dan menganalisis kerentanannya menggunakan Linux.",
+    icon: "https://img.icons8.com/ios-filled/64/ffffff/security-shield.png", // Updated icon for QA & Pentester
+  },
+  {
+    id: 4,
+    title: "Junior Web Developer",
+    company: "PTSP - BMKG",
+    year: "Nov 2023 - Juni 2024",
+    description: "Mengembangkan aplikasi web menggunakan PHP dan kemudian beralih ke Next.js, menciptakan website yang lebih modern dan fleksibel. bertujuan untuk mengefisiensi waktu pengerjaan dan meningkatkan kinerja aplikasi.",
+    icon: "https://img.icons8.com/ios-filled/64/ffffff/code.png", // Updated icon for Junior Web Developer
   },
 ];
+
 export const education = [
   {
     id: 1,
-    degree: "Frontend Developer",
-    institution: " Tech Solution Inc.",
+    degree: "Backend Developer Certification",
+    institution: "Tech Solution Inc.",
     year: "2022 - Present",
-    details: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/graduation-cap--v2.png",
+    details: "Memperdalam pengetahuan dalam pengembangan backend, terutama menggunakan PHP, serta database seperti Xampp.",
+    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/server.png", // Updated icon for Backend Developer
   },
   {
     id: 2,
-    degree: "Frontend Developer",
-    institution: " Tech Solution Inc.",
+    degree: "Frontend Developer Certification",
+    institution: "Tech Solution Inc.",
     year: "2022 - Present",
-    details: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/graduation-cap--v2.png",
+    details: "Mempelajari pengembangan antarmuka pengguna menggunakan teknologi seperti React, TailwindCSS, dan MaterialUI.",
+    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/laptop-code.png", // Updated icon for Frontend Developer
+  },
+  {
+    id: 3,
+    degree: "Fullstack Developer Training",
+    institution: "Tech Solution Inc.",
+    year: "2023 - Present",
+    details: "Pelatihan menyeluruh dalam pengembangan frontend dan backend, termasuk penggunaan Next.js dan Firebase.",
+    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/full-stack-developer.png", // Updated icon for Fullstack Developer
+  },
+  {
+    id: 4,
+    degree: "Cybersecurity & Pentesting",
+    institution: "Tech Solution Inc.",
+    year: "2024 - Present",
+    details: "Pelatihan dalam pengujian keamanan web, menggunakan teknik seperti XSS Injection dan Cross-Site Tracing (XST).",
+    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/security-shield.png", // Updated icon for Cybersecurity & Pentesting
   },
 ];
 

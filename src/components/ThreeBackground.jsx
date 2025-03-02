@@ -3,6 +3,7 @@ import * as THREE from "three";
 
 export default function ThreeBackground() {
   const mountRef = useRef(null);
+
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -11,29 +12,52 @@ export default function ThreeBackground() {
     mountRef.current.appendChild(renderer.domElement);
     camera.position.z = 5;
 
-    // create dense white stars for the background
+    // Create dense stars with gold and blue colors
     const starGeometry = new THREE.BufferGeometry();
-    const startCount = 1500;
-    const startPositions = new Float32Array(startCount * 3);
-    for (let i = 0; i < startCount * 3; i++) {
-      startPositions[i] = (Math.random() - 0.5) * 100; // Spread the stars randomly
-    }
-    starGeometry.setAttribute("position", new THREE.BufferAttribute(startPositions, 3));
-    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
-    const startField = new THREE.Points(starGeometry, starMaterial);
-    scene.add(startField);
+    const starCount = 1500;
+    const starPositions = new Float32Array(starCount * 3);
+    const starColors = new Float32Array(starCount * 3);
 
-    // make starts move or interest with the mouse (parallax effect)
+    for (let i = 0; i < starCount; i++) {
+      // Random positions
+      starPositions[i * 3] = (Math.random() - 0.5) * 100;
+      starPositions[i * 3 + 1] = (Math.random() - 0.5) * 100;
+      starPositions[i * 3 + 2] = (Math.random() - 0.5) * 100;
+
+      // Alternate between gold and blue
+      const color = new THREE.Color();
+      if (Math.random() > 0.5) {
+        color.setHSL(0.1, 1, 0.6); // Gold
+      } else {
+        color.setHSL(0.6, 1, 0.6); // Blue
+      }
+
+      starColors[i * 3] = color.r;
+      starColors[i * 3 + 1] = color.g;
+      starColors[i * 3 + 2] = color.b;
+    }
+
+    starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+    starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
+
+    const starMaterial = new THREE.PointsMaterial({
+      vertexColors: true,
+      size: 0.1,
+    });
+
+    const starField = new THREE.Points(starGeometry, starMaterial);
+    scene.add(starField);
+
+    // Parallax effect
     const handleMouseMove = (event) => {
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-      startField.rotation.x += mouseY * 0.01;
-      startField.rotation.y = mouseX * 0.05;
+      starField.rotation.x += mouseY * 0.01;
+      starField.rotation.y = mouseX * 0.05;
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    // handle window resize for responsiveness
-
+    // Handle window resize
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -41,17 +65,23 @@ export default function ThreeBackground() {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
     };
-
     window.addEventListener("resize", handleResize);
 
     // Render loop
     const animate = () => {
       requestAnimationFrame(animate);
-      startField.rotation.x += 0.001; // slow rotation for movement
-      startField.rotation.y += 0.001;
+      starField.rotation.x += 0.001;
+      starField.rotation.y += 0.001;
       renderer.render(scene, camera);
     };
     animate();
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
+      mountRef.current?.removeChild(renderer.domElement);
+    };
   }, []);
+
   return <div ref={mountRef} className="fixed inset-0 -z-1 w-full h-full"></div>;
 }
