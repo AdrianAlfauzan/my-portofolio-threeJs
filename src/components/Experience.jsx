@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CustomTitle from "./CustomTitle";
 import { useRef, useState } from "react";
+import CustomTitle from "./CustomTitle";
 import { experience } from "./data/config";
 
-const SectionItem = ({ title, subtitle, year, details, icon: Icon, link }) => {
+const SectionItem = ({ id, title, subtitle, year, details, icon: Icon, link, overlayIdAktif, setOverlayIdAktif }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -12,12 +12,12 @@ const SectionItem = ({ title, subtitle, year, details, icon: Icon, link }) => {
   });
 
   const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
-  const [isMobileOverlayVisible, setIsMobileOverlayVisible] = useState(false);
+
+  const isOverlayVisible = overlayIdAktif === id;
 
   const handleToggleOverlay = () => {
-    // Hanya aktif di layar kecil (mobile)
     if (window.innerWidth <= 768) {
-      setIsMobileOverlayVisible((prev) => !prev);
+      setOverlayIdAktif((prev) => (prev === id ? null : id));
     }
   };
 
@@ -38,7 +38,7 @@ const SectionItem = ({ title, subtitle, year, details, icon: Icon, link }) => {
       onClick={handleToggleOverlay}
     >
       <section className="relative bg-black z-20 text-white rounded-xl h-full w-full overflow-hidden">
-        {/* Overlay untuk desktop hover dan mobile click */}
+        {/* Overlay */}
         <a
           href={link}
           target="_blank"
@@ -46,10 +46,13 @@ const SectionItem = ({ title, subtitle, year, details, icon: Icon, link }) => {
           className={`absolute inset-0 bg-black/50 flex items-center justify-center text-white font-semibold text-lg
              backdrop-blur-sm rounded-xl z-30
              transform transition-transform duration-500 ease-in-out
-             ${isMobileOverlayVisible ? "translate-y-0" : "-translate-y-full"} group-hover:translate-y-0`}
-          onClick={(e) => e.stopPropagation()} // supaya klik link gak toggle overlay lagi
+             ${isOverlayVisible ? "translate-y-0" : "-translate-y-full"} group-hover:translate-y-0`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOverlayIdAktif(null); // close saat link diklik
+          }}
         >
-          🔗 Lihat Proyek
+          🔗 Preview Project
         </a>
 
         <section className="border border-[#00bfff] bg-[#ffffff29] rounded-xl p-6 flex flex-col md:flex-row items-center md:items-start justify-center text-center md:text-left gap-4 h-full w-full">
@@ -66,32 +69,29 @@ const SectionItem = ({ title, subtitle, year, details, icon: Icon, link }) => {
   );
 };
 
-export default function EducationAndExpression() {
-  return (
-    <section className="relative container mx-auto px-4 py-12 lg:p-16" id="experience">
-      <CustomTitle title="Education & Experience" />
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
-        {experience.map((edu) => (
-          <SectionItem
-            key={edu.id} //
-            title={edu.degree}
-            subtitle={edu.institution}
-            year={edu.year}
-            details={edu.details}
-            icon={edu.icon}
-            link={edu.link}
-          />
-        ))}
-      </section>
-    </section>
-  );
-}
-
 SectionItem.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
   details: PropTypes.string,
   icon: PropTypes.string.isRequired,
   link: PropTypes.string,
+  overlayIdAktif: PropTypes.number,
+  setOverlayIdAktif: PropTypes.func,
 };
+
+export default function EducationAndExpression() {
+  const [overlayIdAktif, setOverlayIdAktif] = useState(null);
+
+  return (
+    <section className="relative container mx-auto px-4 py-12 lg:p-16" id="experience">
+      <CustomTitle title="Education & Experience" />
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
+        {experience.map((edu) => (
+          <SectionItem key={edu.id} id={edu.id} title={edu.degree} subtitle={edu.institution} year={edu.year} details={edu.details} icon={edu.icon} link={edu.link} overlayIdAktif={overlayIdAktif} setOverlayIdAktif={setOverlayIdAktif} />
+        ))}
+      </section>
+    </section>
+  );
+}
