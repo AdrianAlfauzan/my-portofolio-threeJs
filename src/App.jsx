@@ -6,7 +6,8 @@ import NumbersSection from "./components/NumbersSection";
 import ServicesSection from "./components/ServicesSection";
 import SkillsSection from "./components/SkillsSection";
 import Experience from "./components/Experience";
-import ProjectsSection from "./components/ProjectsSection";
+import MyWorks from "./components/MyWorksSection";
+import MobileDeveloper from "./components/MobileDeveloper";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import LoadingSpinner from "./components/LoadingSpinner";
@@ -26,7 +27,8 @@ function App() {
           <ServicesSection />
           <SkillsSection />
           <Experience />
-          <ProjectsSection />
+          <MyWorks />
+          <MobileDeveloper />
           <Footer />
           <BackToTop />
         </>

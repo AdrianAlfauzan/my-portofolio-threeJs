@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomTitle from "./CustomTitle";
-import { projects } from "./data/config";
+import { myWorks } from "./data/config";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function ProjectsSection() {
+export default function MyWorksSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(null);
 
@@ -17,7 +17,7 @@ export default function ProjectsSection() {
   // Ambil hanya 5 item dari daftar berdasarkan kelompok
   const maxDots = 5;
   const startIdx = Math.floor(currentIndex / maxDots) * maxDots;
-  const visibleDots = projects.slice(startIdx, startIdx + maxDots);
+  const visibleDots = myWorks.slice(startIdx, startIdx + maxDots);
 
   // Auto-scroll setiap 5 detik
   useEffect(() => {
@@ -30,10 +30,10 @@ export default function ProjectsSection() {
 
   // Fungsi next & prev
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % myWorks.length);
   };
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? myWorks.length - 1 : prevIndex - 1));
   };
 
   // Handle geser layar (swipe)
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
 
       <article className="relative w-full h-screen flex my-28 justify-center" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <AnimatePresence initial={false} custom={currentIndex}>
-          {projects.map(
+          {myWorks.map(
             (project, index) =>
               index === currentIndex && (
                 <motion.article

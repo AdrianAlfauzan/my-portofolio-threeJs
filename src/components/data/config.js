@@ -165,8 +165,8 @@ export const experience = [
   },
 ];
 
-// Projects Section
-export const projects = [
+// My Works Section
+export const myWorks = [
   {
     id: 1,
     title: "Project 1",
@@ -176,15 +176,29 @@ export const projects = [
   {
     id: 2,
     title: "Project 2",
-    description: "Membuat Web TUGAS BESAR di semester 4 menggunakan Typescript dikala mahasiswa lain menggunakan PHP.",
+    description: "Membuat Web TUGAS BESAR di semester 4 menggunakan Typescript & Firebase dikala mahasiswa lain menggunakan PHP & Xampp.",
     imageUrl: "/project2.png",
   },
   {
     id: 3,
     title: "Project 3",
-    description: "Membuat Web TUGAS BESAR di semester 3 menggunakan PHP.",
+    description: "Membuat Web TUGAS BESAR di semester 3 menggunakan PHP & Xampp.",
     imageUrl: "/project3.png",
   },
+];
+
+// Mobile Developer Section
+export const mobileWorks = [
+  { id: 1, title: "Mobile App 1", imageUrl: "/mobile/mobile1.png" },
+  { id: 2, title: "Mobile App 2", imageUrl: "/mobile/mobile2.png" },
+  { id: 3, title: "Mobile App 3", imageUrl: "/mobile/mobile3.png" },
+  { id: 4, title: "Mobile App 4", imageUrl: "/mobile/mobile4.png" },
+  { id: 5, title: "Mobile App 5", imageUrl: "/mobile/mobile5.png" },
+  { id: 6, title: "Mobile App 6", imageUrl: "/mobile/mobile6.png" },
+  { id: 7, title: "Mobile App 7", imageUrl: "/mobile/mobile7.png" },
+  { id: 8, title: "Mobile App 8", imageUrl: "/mobile/mobile8.png" },
+  { id: 9, title: "Mobile App 9", imageUrl: "/mobile/mobile9.png" },
+  { id: 10, title: "Mobile App 10", imageUrl: "/mobile/mobile10.png" },
 ];
 
 // Contact Section
