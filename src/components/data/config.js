@@ -48,7 +48,6 @@ export const socialIcons = [
 ];
 
 // Number Section
-
 export const Numbers = [
   {
     id: 1,
@@ -57,17 +56,17 @@ export const Numbers = [
   },
   {
     id: 2,
-    number: 200,
+    number: 20,
     title: "Projects",
   },
   {
     id: 3,
-    number: 120,
+    number: 200,
     title: "Happy Clients",
   },
   {
     id: 4,
-    number: 5,
+    number: 3,
     title: "Years",
   },
 ];
@@ -77,17 +76,17 @@ export const services = [
   {
     id: 1,
     title: "WEB DEVELOPMENT",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description: `"I am here as a fullstack developer for a website, whether it's the full user side or the full admin side."`,
   },
   {
     id: 2,
     title: "MOBILE DEVELOPMENT",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description: `"I am here as a fullstack mobile developer who directly interacts with users to prioritize user satisfaction."`,
   },
   {
     id: 3,
-    title: "WEB DESIGN",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    title: "QA & PENTESTER",
+    description: `"I’m someone who’s not an expert or a cyber specialist, but I prioritize quality in a product for users in the future. I have some expertise in penetration testing."`,
   },
 ];
 
@@ -125,74 +124,44 @@ export const skills = [
   },
 ];
 
-// Experience and Education Section
+// Experience Section
 export const experience = [
   {
     id: 1,
-    title: "Fullstack Developer",
-    company: "PTSP - BMKG",
+    degree: "Full-Stack Web Developer",
+    institution: "PTSP - BMKG",
     year: "2023 - Present",
-    description: "Mengembangkan aplikasi PTSP dengan antarmuka responsif dan backend yang efisien. Berkolaborasi dengan tim untuk memastikan kinerja dan stabilitas aplikasi, serta melakukan peralihan dari PHP ke Next.js.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/full-stack-developer.png", // Updated icon for Fullstack Developer
+    details:
+      "Mengembangkan Website PTSP (Pelayanan Terpadu Satu Pintu) dengan antarmuka responsif dan backend yang efisien. Berkolaborasi dengan tim untuk memastikan kinerja dan stabilitas aplikasi, serta melakukan peralihan dari PHP ke Next.js.",
+    icon: "/FullStack.png",
+    link: "https://ptsp-six.vercel.app/Beranda", // Contoh link (ubah jika perlu)
   },
   {
     id: 2,
-    title: "Backend Developer",
-    company: "PTSP - BMKG",
-    year: "Juni 2024 - Juli 2024",
-    description: "Bertanggung jawab atas pengembangan aplikasi Simore (Sistem Monitoring Rescue), serta membuat backend yang efisien untuk mendukung operasi pencarian dan penyelamatan.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/server.png", // Updated icon for Backend Developer
+    degree: "Full-Stack Mobile Developer",
+    institution: "PTSP - BMKG",
+    year: "2022 - Present",
+    details: "Mengembangkan aplikasi mobile yang bertujuan untuk mempermudah pengguna user di berbagai device. Menggunakan React Native Expo & Firebase",
+    icon: "/MobileApp.png",
+    link: "https://github.com/AdrianAlfauzan/PTSP-MOBILE", // Contoh link (ubah jika perlu)
   },
   {
     id: 3,
-    title: "QA & Pentester",
-    company: "PTSP - BMKG",
-    year: "2023 - Present",
-    description: "Melakukan pengujian keamanan pada aplikasi menggunakan tools seperti XSS Injection, Cross-Site Tracing (XST), dan menganalisis kerentanannya menggunakan Linux.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/security-shield.png", // Updated icon for QA & Pentester
-  },
-  {
-    id: 4,
-    title: "Junior Web Developer",
-    company: "PTSP - BMKG",
-    year: "Nov 2023 - Juni 2024",
-    description: "Mengembangkan aplikasi web menggunakan PHP dan kemudian beralih ke Next.js, menciptakan website yang lebih modern dan fleksibel. bertujuan untuk mengefisiensi waktu pengerjaan dan meningkatkan kinerja aplikasi.",
-    icon: "https://img.icons8.com/ios-filled/64/ffffff/code.png", // Updated icon for Junior Web Developer
-  },
-];
-
-export const education = [
-  {
-    id: 1,
-    degree: "Backend Developer Certification",
-    institution: "Tech Solution Inc.",
-    year: "2022 - Present",
-    details: "Memperdalam pengetahuan dalam pengembangan backend, terutama menggunakan PHP, serta database seperti Xampp.",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/server.png", // Updated icon for Backend Developer
-  },
-  {
-    id: 2,
-    degree: "Frontend Developer Certification",
-    institution: "Tech Solution Inc.",
-    year: "2022 - Present",
-    details: "Mempelajari pengembangan antarmuka pengguna menggunakan teknologi seperti React, TailwindCSS, dan MaterialUI.",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/laptop-code.png", // Updated icon for Frontend Developer
-  },
-  {
-    id: 3,
-    degree: "Fullstack Developer Training",
-    institution: "Tech Solution Inc.",
-    year: "2023 - Present",
-    details: "Pelatihan menyeluruh dalam pengembangan frontend dan backend, termasuk penggunaan Next.js dan Firebase.",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/full-stack-developer.png", // Updated icon for Fullstack Developer
+    degree: "Back - End Developer",
+    institution: "BASARNAS - SIMORE",
+    year: "Mei 2023 - September 2023",
+    details: "Project pembuatan website Simore (Sistem Monitoring Rescue) menggunakan PHP Native dan Tailwindcss.",
+    icon: "/BackEnd.png",
+    link: "https://github.com/AdrianAlfauzan/BASARNAS", // Contoh link (ubah jika perlu)
   },
   {
     id: 4,
     degree: "Cybersecurity & Pentesting",
-    institution: "Tech Solution Inc.",
+    institution: "PTSP, SIMORE",
     year: "2024 - Present",
     details: "Pelatihan dalam pengujian keamanan web, menggunakan teknik seperti XSS Injection dan Cross-Site Tracing (XST).",
-    icon: "https://img.icons8.com/pastel-glyph/64/ffffff/security-shield.png", // Updated icon for Cybersecurity & Pentesting
+    icon: "/CyberSecurity.png",
+    link: "https://cybersecurity-training.example.com", // Contoh link pelatihan
   },
 ];
 
@@ -201,91 +170,19 @@ export const projects = [
   {
     id: 1,
     title: "Project 1",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description: "Membuat portofolio dengan Bootstrap hasil berlajar di Youtube.",
     imageUrl: "/project1.png",
   },
   {
     id: 2,
     title: "Project 2",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description: "Membuat Web TUGAS BESAR di semester 4 menggunakan Typescript dikala mahasiswa lain menggunakan PHP.",
     imageUrl: "/project2.png",
   },
   {
     id: 3,
     title: "Project 3",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project3.png",
-  },
-  {
-    id: 1,
-    title: "Project 1",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project1.png",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project2.png",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project3.png",
-  },
-  {
-    id: 1,
-    title: "Project 1",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project1.png",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project2.png",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project3.png",
-  },
-  {
-    id: 1,
-    title: "Project 1",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project1.png",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project2.png",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project3.png",
-  },
-  {
-    id: 1,
-    title: "Project 1",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project1.png",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    imageUrl: "/project2.png",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description: "Membuat Web TUGAS BESAR di semester 3 menggunakan PHP.",
     imageUrl: "/project3.png",
   },
 ];

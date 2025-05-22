@@ -1,57 +1,32 @@
 import { useState, useEffect, useMemo } from "react";
 
 const NamaGradient = () => {
-  const texts = useMemo(
-    () => [
-      "Adrian Musa Alfauzan",
-      "Fullstack Developer",
-      "Problem Solver",
-      "Programmer Life", //
-    ],
-    []
-  );
+  const texts = useMemo(() => ["Adrian Musa Alfauzan", "Fullstack Developer", "Problem Solver", "Programmer Life"], []);
+
   const [textIndex, setTextIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [removing, setRemoving] = useState(false);
+  const [visible, setVisible] = useState(true); // untuk kontrol fade in/out
 
   useEffect(() => {
-    const text = texts[textIndex];
-    if (index < text.length && !removing) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, index + 1));
-        setIndex(index + 1);
-      }, 75);
-      return () => clearTimeout(timeout);
-    }
+    // Atur interval untuk fade out, ganti teks, lalu fade in
+    const fadeOutDuration = 500; // ms
+    const displayDuration = 2000; // ms tampil penuh sebelum fade out
 
-    if (index === text.length) {
-      setTimeout(() => setRemoving(true), 500);
-    }
+    const timeout1 = setTimeout(() => {
+      setVisible(false); // mulai fade out
+    }, displayDuration);
 
-    if (removing && index > 0) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, index - 1));
-        setIndex(index - 1);
-      }, 75);
-      return () => clearTimeout(timeout);
-    }
+    const timeout2 = setTimeout(() => {
+      setTextIndex((prev) => (prev + 1) % texts.length);
+      setVisible(true); // fade in teks baru
+    }, displayDuration + fadeOutDuration);
 
-    if (removing && index === 0) {
-      setTimeout(() => {
-        setRemoving(false);
-        setTextIndex((prev) => (prev + 1) % texts.length);
-        setIndex(0);
-      }, 500);
-    }
-  }, [index, removing, textIndex, texts]);
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
+  }, [textIndex, texts.length]);
 
-  return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">
-      {displayedText}
-      {/* Adrian Musa Alfauzan */}
-    </span>
-  );
+  return <span className={`text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>{texts[textIndex]}</span>;
 };
 
 export default NamaGradient;

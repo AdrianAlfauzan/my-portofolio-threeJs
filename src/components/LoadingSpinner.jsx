@@ -1,10 +1,22 @@
+/* eslint-disable react/no-unknown-property */
+import PropTypes from "prop-types";
 import { useRef, useMemo, useEffect, useState } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Reflector, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 function LoadingBar({ progress }) {
+  LoadingBar.propTypes = {
+    progress: PropTypes.number.isRequired,
+  };
+  ImageMesh.propTypes = {
+    scale: PropTypes.number.isRequired,
+    position: PropTypes.number.isRequired,
+  };
+  LoadingSpinner.propTypes = {
+    onComplete: PropTypes.number.isRequired,
+  };
   return (
     <div
       style={{
@@ -80,7 +92,7 @@ export default function LoadingSpinner({ onComplete }) {
     <>
       <LoadingBar progress={loadingProgress} />
       <Canvas dpr={[1, 1.5]} camera={{ position: [0, 1.2, 4], fov: 70 }} style={{ background: "transparent", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
-        <ambientLight intensity={0.8} />
+        <ambientLight color="#ffffff" />
         <ImageMesh position={[0, 0, 0]} scale={scale} rotation={[0, 0, 0]} />
         <EffectComposer multisampling={4}>
           <Bloom kernelSize={2} luminanceThreshold={0} luminanceSmoothing={0.3} intensity={0.4} />

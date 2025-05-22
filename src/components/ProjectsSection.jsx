@@ -65,10 +65,13 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
                   className="absolute w-[90%] h-auto md:w-[80%] md:h-full p-4 md:p-6 border border-[#00bfff] bg-[#ffffff29] rounded-3xl text-white"
                 >
-                  <img src={project.imageUrl} alt={project.title} className="w-full aspect-[16/9] md:h-[700px] object-cover rounded-t-lg mb-4" />
-
-                  <h2 className="uppercase text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-red-500">{project.title}</h2>
-                  <p className="text-sm mt-2">{project.description}</p>
+                  <div className="relative w-full aspect-[16/9] md:h-[700px] rounded-t-lg overflow-hidden mb-4">
+                    <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30 px-4">
+                      <h2 className="uppercase text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-red-500">{project.title}</h2>
+                      <p className="text-sm mt-2 text-white">{project.description}</p>
+                    </div>
+                  </div>
 
                   {/* 🔵 Indikator titik untuk mobile */}
                   <div className="flex justify-center mt-4 md:hidden">

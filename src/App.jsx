@@ -5,7 +5,7 @@ import HeroSection from "./components/HeroSection";
 import NumbersSection from "./components/NumbersSection";
 import ServicesSection from "./components/ServicesSection";
 import SkillsSection from "./components/SkillsSection";
-import EducationAndExpression from "./components/EducationAndExpression";
+import Experience from "./components/Experience";
 import ProjectsSection from "./components/ProjectsSection";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
@@ -25,7 +25,7 @@ function App() {
           <NumbersSection />
           <ServicesSection />
           <SkillsSection />
-          <EducationAndExpression />
+          <Experience />
           <ProjectsSection />
           <Footer />
           <BackToTop />
