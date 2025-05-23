@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import InteractiveButton from "./InteractiveButton";
 import CustomTitle from "./CustomTitle";
 import { contactData } from "./data/config";
 export default function ContactUs() {

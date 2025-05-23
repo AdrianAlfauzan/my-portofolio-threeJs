@@ -53,15 +53,34 @@ function DraggableImage({ id, imageUrl, position, rotation, onUpdate, onActivate
   const handleMouseDown = (e) => {
     e.preventDefault();
     onActivate(id);
-    // Pindahkan ke tengah layar dulu, biar drag mulai dari posisi baru
-    // Kalau kamu ingin mouse sama seperti touch (posisi drag langsung di posisi mouse), bisa modifikasi di sini juga.
-    // Tapi sesuai permintaan, fokus di touch dulu.
-    moveToTouchCenter(e.clientX, e.clientY);
-    setTimeout(() => startDrag(e.clientX, e.clientY), 0);
+
+    const el = elementRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    // Langsung set dragOffset ke tengah gambar
+    dragOffset.current = {
+      x: width / 2,
+      y: height / 2,
+    };
+
+    // Pindahkan gambar ke posisi mouse (tengah)
+    onUpdate(id, {
+      x: e.clientX - width / 2,
+      y: e.clientY - height / 2,
+    });
+
+    // Mulai drag
+    isDragging.current = true;
+    setDragging(true);
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
   };
+
   const handleMouseMove = (e) => doDrag(e.clientX, e.clientY);
   const handleMouseUp = () => {
     stopDrag();
@@ -229,7 +248,7 @@ export default function MobileDeveloper() {
         <CustomTitle title="Mobile Developer" />
       </header>
 
-      <div className="relative w-full h-screen overflow-auto rounded-md px-2 sm:px-4" style={{ touchAction: "auto" }}>
+      <div className="relative w-full h-screen my-10 rounded-md px-2 sm:px-4 overflow-hidden" style={{ touchAction: "auto" }}>
         {items.map((item) => (
           <DraggableImage key={item.id} id={item.id} imageUrl={item.imageUrl} position={item.position} rotation={item.rotation} onUpdate={updateItem} onActivate={handleActivate} isActive={item.id === activeId} setDragging={setDragging} />
         ))}

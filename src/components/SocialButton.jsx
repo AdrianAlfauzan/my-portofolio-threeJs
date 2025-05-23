@@ -12,17 +12,13 @@ export default function SocialButton() {
       transition: {
         duration: animationDuration,
         ease: "easeInOut",
-        strokeOpacity: {
-          delay: animationDuration,
-        },
-        fillOpacity: {
-          delay: animationDuration,
-        },
+        strokeOpacity: { delay: animationDuration },
+        fillOpacity: { delay: animationDuration },
       },
-      hover: {
-        scale: 1.1,
-        transition: { duration: 0.3 },
-      },
+    },
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.3 },
     },
   };
 
@@ -31,20 +27,11 @@ export default function SocialButton() {
   return (
     <div className="md:flex flex-col items-center justify-center border border-white bg-[#ffffff29] rounded-3xl space-y-11 p-3 max-h-[600px] md:max-h-[500px] hidden">
       {socialIcons.map((icon, index) => (
-        <button key={icon.id}>
-          <svg viewBox={icon.viewBox} width={40} height={40}>
-            <motion.path
-              d={icon.path}
-              fill={blueShades[index % blueShades.length]} //
-              stroke={blueShades[index % blueShades.length]}
-              strokeWidth={1}
-              variants={variants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-            />
-          </svg>
-        </button>
+        <a key={icon.id} href={icon.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block" }} aria-label={`Link to social media id ${icon.id}`}>
+          <motion.svg viewBox={icon.viewBox} width={40} height={40} initial="initial" animate="animate" whileHover="hover">
+            <motion.path d={icon.path} fill={blueShades[index % blueShades.length]} stroke={blueShades[index % blueShades.length]} strokeWidth={1} variants={variants} />
+          </motion.svg>
+        </a>
       ))}
     </div>
   );

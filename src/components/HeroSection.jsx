@@ -31,12 +31,12 @@ function HeroSection() {
                 <figure className="w-56 ">
                   <InteractiveButton text="Hire Me" />
                 </figure>
-                <motion.button whileHover={{ scale: 1.1 }} className="flex items-center px-4 py-2 bg-transparent text-yellow-400 border border-[#00d2ff] rounded-3xl">
+                <motion.a whileHover={{ scale: 1.1 }} href="/pdf/MyCv.pdf" download className="flex items-center px-4 py-2 bg-transparent text-yellow-400 border border-[#00d2ff] rounded-3xl">
                   <svg viewBox="0 0 24 24" width={40} height={40} fill="none" stroke="currentColor" strokeWidth={0.3}>
                     <motion.path d="M12 15.5l4.95-4.95-1.414-1.414L13 12.172V4h-2v8.172L8.464 9.636 7.05 11.05 12 15.5zM5 17h14v2H5v-2z" fill="yellow" stroke="yellow" variants={variants} initial="initial" animate="animate" />
                   </svg>
                   <span className="ml-2">Download Resume</span>
-                </motion.button>
+                </motion.a>
               </section>
             </section>
           </section>
