@@ -96,7 +96,7 @@ export default function EducationAndExpression() {
 
   return (
     <section className="relative container mx-auto px-4 py-12 lg:p-16" id="experience">
-      <CustomTitle title="Education & Experience" />
+      <CustomTitle title="My Experience" />
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
         {experience.map((edu) => (
           <SectionItem key={edu.id} id={edu.id} title={edu.degree} subtitle={edu.institution} year={edu.year} details={edu.details} icon={edu.icon} link={edu.link} overlayIdAktif={overlayIdAktif} setOverlayIdAktif={setOverlayIdAktif} />

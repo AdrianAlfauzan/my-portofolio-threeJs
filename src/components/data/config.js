@@ -156,7 +156,7 @@ export const experience = [
     year: "Mei 2023 - September 2023",
     details: "Project pembuatan website Simore (Sistem Monitoring Rescue) menggunakan PHP Native dan Tailwindcss.",
     icon: "/BackEnd.png",
-    link: "https://github.com/AdrianAlfauzan/BASARNAS", // Contoh link (ubah jika perlu)
+    link: "https://imgur.com/a/M1QAQlB", // Contoh link (ubah jika perlu)
   },
   {
     id: 4,

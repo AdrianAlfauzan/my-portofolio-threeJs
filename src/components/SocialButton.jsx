@@ -25,7 +25,7 @@ export default function SocialButton() {
   const blueShades = ["#1E90FF", "#007BFF", "#0D6EFD", "#6495ED"];
 
   return (
-    <div className="md:flex flex-col items-center justify-center border border-white bg-[#ffffff29] rounded-3xl space-y-11 p-3 max-h-[600px] md:max-h-[500px] hidden">
+    <div className="flex md:flex-col items-center justify-center border border-white bg-[#ffffff29] rounded-3xl space-x-6 md:space-x-0 md:space-y-11 p-3 max-h-[600px] md:max-h-[500px] ">
       {socialIcons.map((icon, index) => (
         <a key={icon.id} href={icon.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block" }} aria-label={`Link to social media id ${icon.id}`}>
           <motion.svg viewBox={icon.viewBox} width={40} height={40} initial="initial" animate="animate" whileHover="hover">
