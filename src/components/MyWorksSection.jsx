@@ -52,7 +52,7 @@ export default function MyWorksSection() {
         <CustomTitle title="My Work" />
       </header>
 
-      <article className="relative w-full h-screen flex my-28 justify-center" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <article className="relative w-full h-[30%] lg:h-full flex my-16  justify-center" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <AnimatePresence initial={false} custom={currentIndex}>
           {myWorks.map(
             (project, index) =>

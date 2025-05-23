@@ -4,7 +4,17 @@ import { useRef, useState } from "react";
 import CustomTitle from "./CustomTitle";
 import { experience } from "./data/config";
 
-const SectionItem = ({ id, title, subtitle, year, details, icon: Icon, link, overlayIdAktif, setOverlayIdAktif }) => {
+const SectionItem = ({
+  id, //
+  title,
+  subtitle,
+  year,
+  details,
+  icon: Icon,
+  link,
+  overlayIdAktif,
+  setOverlayIdAktif,
+}) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
