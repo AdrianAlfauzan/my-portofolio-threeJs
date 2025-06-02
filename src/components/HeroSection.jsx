@@ -58,7 +58,7 @@ function HeroSection() {
             <motion.div
               className="w-[350px] h-[350px] md:w-[400px] md:h-[400px] flex justify-center items-center p-3 rounded-full overflow-hidden relative aspect-square"
               animate={{
-                backgroundColor: ["#FFC107", "#FF7556", "#FF6667"],
+                backgroundColor: ["#00d2ff", "#1e90ff", "#3a7bd5"],
                 scale: [1, 1.1, 1],
                 rotate: [1, 5, 5, 1],
               }}

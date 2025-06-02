@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="relative z-10 text-white border-t-2 border-white mt-20">
-      <div className="container p-8 flex justify-between bg-yellow-400">
+      <div className="container p-8 flex justify-between ">
         <img src="/CodingNGamer.webp" alt="" className="w-12 h-12 rounded-full flex" />
         <nav className="flex ml-2">
           {letters.map((letter, index) => (
