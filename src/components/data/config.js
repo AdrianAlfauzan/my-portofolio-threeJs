@@ -97,14 +97,29 @@ export const services = [
 // Skills Section
 export const skills = [
   {
-    skill: "React",
+    skill: "Python",
+    percentage: 80,
+    icon: "https://img.icons8.com/color/40/python.png",
+  },
+  {
+    skill: "JavaScript",
     percentage: 90,
+    icon: "https://img.icons8.com/color/40/javascript.png",
+  },
+  {
+    skill: "React",
+    percentage: 95,
     icon: "https://img.icons8.com/office/40/react.png",
   },
   {
     skill: "Node.js",
-    percentage: 80,
+    percentage: 85,
     icon: "https://img.icons8.com/fluency/40/node-js.png",
+  },
+  {
+    skill: "Next JS",
+    percentage: 95,
+    icon: "https://img.icons8.com/color/40/nextjs.png",
   },
   {
     skill: "Tailwindcss",
@@ -112,20 +127,59 @@ export const skills = [
     icon: "https://img.icons8.com/color/40/tailwindcss.png",
   },
   {
-    skill: "Next JS",
-    percentage: 90,
-    icon: "https://img.icons8.com/color/40/nextjs.png",
-  },
-  {
     skill: "Firebase",
-    percentage: 85,
+    percentage: 95,
     icon: "https://img.icons8.com/color/40/firebase.png",
   },
   {
-    skill: "Python",
-    percentage: 80,
-    icon: "https://img.icons8.com/color/40/python.png",
+    skill: "Expo Native", //
+    percentage: 95,
+    icon: "https://img.icons8.com/color/40/expo.png",
   },
+
+  {
+    skill: "Flutter",
+    percentage: 70,
+    icon: "https://img.icons8.com/color/40/flutter.png",
+  },
+  {
+    skill: "Supabase",
+    percentage: 75,
+    icon: "https://img.icons8.com/color/40/supabase.png",
+  },
+  {
+    skill: "Docker",
+    percentage: 60,
+    icon: "https://img.icons8.com/color/40/docker.png",
+  },
+  {
+    skill: "PHP",
+    percentage: 50,
+    icon: "https://img.icons8.com/color/40/php.png",
+  },
+  {
+    skill: "MongoDB",
+    percentage: 70,
+    icon: "https://img.icons8.com/color/40/mongodb.png",
+  },
+
+  {
+    skill: "Git", //
+    percentage: 100,
+    icon: "https://img.icons8.com/color/40/git.png",
+  },
+  {
+    skill: "Github", //
+    percentage: 100,
+    icon: "https://img.icons8.com/color/40/github.png",
+  },
+  {
+    skill: "Linux", //
+    percentage: 85,
+    icon: "https://img.icons8.com/color/40/linux.png",
+  },
+  { skill: "RestAPI", percentage: 75, icon: "https://img.icons8.com/color/40/api.png" },
+  { skill: "Java", percentage: 70, icon: "https://img.icons8.com/color/40/java-coffee-cup-logo.png" },
 ];
 
 // Experience Section

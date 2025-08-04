@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import CustomTitle from "./CustomTitle";
 import { skills } from "./data/config";
+import { Fragment } from "react";
 
 const SkillCircle = ({ skill, percentage, icon }) => {
   const radius = 50;
@@ -10,34 +11,39 @@ const SkillCircle = ({ skill, percentage, icon }) => {
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <motion.article
-      initial={{ opacity: 0 }} //
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 1 }}
-      className="relative flex flex-col items-center "
-    >
-      <svg width={120} height={120} className="rotate-[-90deg]">
-        <circle cx={60} cy={60} r={radius} fill="#transparent" stroke="#ffffff29" strokeWidth={10} />
-        <motion.circle
-          cx={60}
-          cy={60} //
-          r={radius}
-          fill="transparent"
-          stroke="#FFC107"
-          strokeWidth={10}
-          strokeDasharray={circumference}
-          initial={{ strokeDashoffset: circumference }}
-          whileInView={{ strokeDashoffset }}
+    <Fragment>
+      <div>
+        <motion.article
+          initial={{ opacity: 0 }} //
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        ></motion.circle>
-      </svg>
-      <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img src={icon} alt={skill} className="w-10 h-10 mb-1" />
-        <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-red-500">{percentage}%</p>
+          transition={{ duration: 1 }}
+          className="relative flex flex-col items-center "
+        >
+          <svg width={120} height={120} className="rotate-[-90deg]">
+            <circle cx={60} cy={60} r={radius} fill="#transparent" stroke="#ffffff29" strokeWidth={10} />
+            <motion.circle
+              cx={60}
+              cy={60} //
+              r={radius}
+              fill="transparent"
+              stroke="#FFC107"
+              strokeWidth={10}
+              strokeDasharray={circumference}
+              initial={{ strokeDashoffset: circumference }}
+              whileInView={{ strokeDashoffset }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            ></motion.circle>
+          </svg>
+          <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <img src={icon} alt={skill} className="w-10 h-10 mb-1" />
+            <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-red-500">{percentage}%</p>
+          </div>
+        </motion.article>
+        <p className="text-center text-white ">{skill}</p>
       </div>
-    </motion.article>
+    </Fragment>
   );
 };
 
