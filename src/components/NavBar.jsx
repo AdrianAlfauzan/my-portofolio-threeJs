@@ -48,12 +48,11 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="relative flex justify-between px-12 py-2 ">
-      <div ref={scope} className="relative bg-green-500">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="absolute top-4 left-4 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center"
-        >
+    <div className="relative flex items-center justify-between w-full py-2 px-4 ">
+      {/* Left: Menu Button + Nav */}
+      <div ref={scope} className="relative">
+        {/* Burger Button */}
+        <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center">
           <svg width={23} height={23} viewBox="0 0 23 18">
             <Path className="top" d="M 2 2.5 L 20 2.5" />
             <Path className="middle" d="M 2 9.423 L 20 9.423" opacity="1" />
@@ -61,6 +60,7 @@ export default function NavBar() {
           </svg>
         </button>
 
+        {/* Sidebar Nav */}
         <nav className={`fixed top-0 left-0 h-full w-72 z-30 flex items-center bg-gradient-to-br from-purple-700 to-blue-600 transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
           <ul className="flex flex-col p-6">
             {NavItems.map((item) => (
@@ -73,9 +73,23 @@ export default function NavBar() {
           </ul>
         </nav>
       </div>
-      <h1 className="font-bold text-2xl text-white top-8 right-8 p-5 lg:top-12 lg:pr-16 ">
-        <img src="/CodingNGamer.webp" alt="" className="w-12 h-12 rounded-full" />
-      </h1>
+
+      {/* Center: Update Soon! */}
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-40">
+        <div
+          className="rounded-2xl px-6 shadow-lg"
+          style={{
+            background: "linear-gradient(45deg, #00d2ff, #3a7bd5)",
+          }}
+        >
+          <h1 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-center animate-pulse">Update Soon!</h1>
+        </div>
+      </div>
+
+      {/* Right: Avatar */}
+      <div className="">
+        <img src="/CodingNGamer.webp" alt="" className="w-12 h-12 rounded-full shadow-lg" />
+      </div>
     </div>
   );
 }
